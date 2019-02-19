@@ -33,6 +33,7 @@ class MyApplication : Application() {
         //拿到原来的Instrumentation
         try {
             val clazz = Class.forName("android.app.ActivityThread")
+//            val clazz = classLoader.loadClass("android.app.ActivityThread")
             val currentThreadField = clazz.getDeclaredField("sCurrentActivityThread")
             currentThreadField.isAccessible = true
             val currentThread = currentThreadField.get(null)
